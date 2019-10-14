@@ -15,13 +15,15 @@ public class connectionDB {
 
     public Connection getConnectDB() {
         try {
-            String uRL = "jdbc:sqlserver://127.0.0.1:1433;databaseName=QuanLySinhVien ";           
+            String uRL = "jdbc:sqlserver://127.0.0.1:1433;databaseName=QuanLySinhVien ";
             String user = "sa";
             String pass = "123";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            cnn = DriverManager.getConnection(uRL,user,pass);
+            cnn = DriverManager.getConnection(uRL, user, pass);
+            
             System.out.println("Thanh cong");
-        } catch ( Exception e) {
+        
+        } catch (Exception e) {
             System.out.println("khong ket noi duoc");
         }
         return cnn;

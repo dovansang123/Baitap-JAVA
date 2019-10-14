@@ -15,20 +15,18 @@ public class QuanLy {
         Connection cn = kn.getConnectDB();
         Statement stm = null;
         ResultSet rs = null;
-        String sql = "select *from Student ";
+       String sql = "SELECT * FROM Student";
         try {
             stm = cn.createStatement();
             rs = stm.executeQuery(sql);
-            while (rs.next()) {
-                int id = rs.getInt("id");
+           while (rs.next()) {
+              int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String age = rs.getString("age");
-                System.out.println("id: " + rs.getInt(1) + "\t name: " + rs.getString(2) + "\t age: " + rs.getString(3));
-            }
-        } catch (Exception e) {
-            System.out.println("loi roi "+e);
+              System.out.println("id: " + rs.getInt(1) + "\t name: " + rs.getString(2) + "\t age: " + rs.getString(3));
+           }
+       } catch (Exception e) {
+          System.out.println("loi roi ");
         }
-
     } 
-
 }
